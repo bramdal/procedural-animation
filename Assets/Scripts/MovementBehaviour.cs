@@ -59,6 +59,11 @@ public class MovementBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
+
+
         cam = Camera.main;   
         anim = GetComponent<Animator>();
         charController = GetComponent<CharacterController>();
@@ -280,7 +285,6 @@ public class MovementBehaviour : MonoBehaviour
         }
     }
    
-
     private void MoveSpine(Quaternion spineTilt){
         anim.SetBoneLocalRotation(HumanBodyBones.Spine, spineTilt);
     }
